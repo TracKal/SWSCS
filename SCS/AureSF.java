@@ -1,29 +1,29 @@
 package SCS;
 
-public class AureSF extends SpaceFighter {
+public class AureSF extends SpaceStarFighter {
 
-  int attack(SpaceFighter SF) {
+  int attack(SpaceStarFighter SSF) {
     int attack = ran.nextInt(500) + (500 / 10) - (250 / 10);
-    if (SF.health > 0) {
-      SF.currentHealth = (SF.health - attack);
-      SF.health -= attack;
+    if (SSF.health > 0) {
+      SSF.currentHealth = (SSF.health - attack);
+      SSF.health -= attack;
       isAlive = true;
-    } else if (SF.currentHealth <= attack) {
-      SF.currentHealth -= attack;
+    } else if (SSF.currentHealth <= attack) {
+      SSF.currentHealth -= attack;
       isAlive = false;
     }
     return attack;
   }
 
-  int missileBarrage(SpaceFighter SF) {
+  int missileBarrage(SpaceStarFighter SSF) {
 
     int missleBarrage = ran.nextInt(800) + (1000 / 10) - (250 / 10);
-    if (SF.health > 0) {
-      SF.currentHealth = (SF.health - missleBarrage);
-      SF.health -= missleBarrage;
+    if (SSF.health > 0) {
+      SSF.currentHealth = (SSF.health - missleBarrage);
+      SSF.health -= missleBarrage;
       isAlive = true;
-    } else if (SF.currentHealth <= missleBarrage) {
-      SF.currentHealth -= missleBarrage;
+    } else if (SSF.currentHealth <= missleBarrage) {
+      SSF.currentHealth -= missleBarrage;
       isAlive = false;
     }
     return missleBarrage;

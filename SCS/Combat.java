@@ -34,23 +34,29 @@ public class Combat {
       switch (move) {
         case 'a':
           if (choice == '1') {
-            System.out.println("\nSith Fighter attacks and deales " + SF.attack(ASF) + " damage. ");
+            System.out.println("\nSith Fighter attacks and deales " + SF.attack(SF) + " damage. ");
             System.out.println("\nAure Strike Fighter health is now " + ASF.getCurrentHealth());
-          }
-          if (choice == '2') {
+          } else if (choice == '2') {
             System.out.println("\nAure Strike Fighter attacks and deales " + ASF.attack(SF) + " damage.");
             System.out.println("\nSith Fighter health is now " + SF.getCurrentHealth());
           }
+          break;
         case 'm':
           if (choice == '1') {
             System.out.println("\nSith Fighter attacks and deales " + SF.missle(ASF) + " damage. ");
             System.out.println("\nAure Strike Fighter health is now " + ASF.getCurrentHealth());
-          }
-          if (choice == '2') {
-            System.out.println("\nAure Strike Fighter attacks and deales " + ASF.missileBarrage(SF) + " damage.");
+          } else if (choice == '2') {
+            System.out
+                .println("\nAure Strike Fighter uses missle barrage and deales " + ASF.missileBarrage(SF) + " damage.");
             System.out.println("\nSith Fighter health is now " + ASF.getCurrentHealth());
           }
       }
+      if (ASF.getCurrentHealth() < 0) {
+        System.out.println("\nAure Strike Fighter is now destroyed.");
+      } else if (SF.getCurrentHealth() < 0) {
+        System.out.println("\nSith Fighter is destroyed.");
+      }
+      break;
     } while (SF.isAlive = true);
   }
 }

@@ -1,30 +1,30 @@
 package SCS;
 
-public class SithFighter extends SpaceFighter {
+public class SithFighter extends SpaceStarFighter {
 
-  public int attack(SpaceFighter SF) {
+  public int attack(SpaceStarFighter SSF) {
 
     int attack = ran.nextInt(100) + (500 / 10) - (250 / 10);
-    if (SF.health > 0) {
-      SF.currentHealth = (SF.health - attack);
-      SF.health -= attack;
+    if (SSF.health > 0) {
+      SSF.currentHealth = (SSF.health - attack);
+      SSF.health -= attack;
       isAlive = true;
-    } else if (SF.currentHealth <= attack) {
-      SF.currentHealth -= attack;
+    } else if (SSF.currentHealth <= attack) {
+      SSF.currentHealth -= attack;
       isAlive = false;
     }
     return attack;
   }
 
-  int missle(SpaceFighter SF) {
+  int missle(SpaceStarFighter SSF) {
 
     int missle = ran.nextInt(400) + (500 / 10) - (250 / 10);
-    if (SF.health > 0) {
-      SF.currentHealth = (SF.health - missle);
-      SF.health -= missle;
+    if (SSF.health > 0) {
+      SSF.currentHealth = (SSF.health - missle);
+      SSF.health -= missle;
       isAlive = true;
-    } else if (SF.currentHealth <= missle) {
-      SF.currentHealth -= missle;
+    } else if (SSF.currentHealth <= missle) {
+      SSF.currentHealth -= missle;
       isAlive = false;
     }
     return missle;
